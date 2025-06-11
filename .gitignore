@@ -1,0 +1,12 @@
+# Useless Files
+.idea/
+.vscode/
+.DS_Store
+
+# Generated Files
+node_modules/
+dist/
+
+# Nerfies Files
+nerfie-static/
+nerfie-index.html

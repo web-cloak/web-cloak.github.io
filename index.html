@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="WebCloak is a research project that characterizes and mitigates the threats of LLM-driven web agents as crawlers.">
+  <meta name="keywords" content="WebCloak, LLM, Web Agent, Crawler, Security">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WebCloak: Characterizing and Mitigating the Threats of LLM-Driven Web Agents as Intelligent Scrapers</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">WebCloak: Characterizing and Mitigating the Threats of LLM-Driven Web Agents as Intelligent Scrapers</h1>
+          <div style="display: none">
+            <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=93WHYxeYUD3yYxVXNn7mAHYiemdqOayYCNFFF8DOM2A&cl=ffffff&w=a"></script>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Anonymous Authors</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body" style="gap: 30px; padding-bottom: 0.5rem">
+      <div class="hero-sub">
+        <img id="teaser-1" style="height: 90px" src="./static/images/agents-mechanism.png" alt="Agent Mechanism">
+        <h2 class="subtitle has-text-centered">
+           Mechanism of LLM-driven scrapers
+        </h2>
+      </div>
+      <div class="hero-sub">
+        <img id="teaser-2" style="height: 90px" src="./static/images/design_overview.png" alt="WebCloak Teaser Image">
+        <h2 class="subtitle has-text-centered">
+          Design overview of WebCloak
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The rise of web agents powered by large language models (LLMs) is reshaping the landscape of human-computer interaction, enabling users to automate complex web tasks with natural language commands. However, this progress introduces serious, yet largely unexplored security concerns: adversaries can easily employ such web agents to conduct advanced web scraping, particularly of rich visual content. This paper presents the first systematic characterization of the danger represented by such LLM-driven web agents as intelligent scrapers. We develop LLMCrawlBench, a large test set of 237 extracted real-world webpages (10,895 images) from 50 popular high-traffic websites in 5 critical categories, designed specifically for adversarial image extraction evaluation. Our wide-ranging metrics across over 32 various scraper implementations, including LLM-to-Script (L2S), LLM-Native Crawlers (LNC), and LLM-based web agents (LWA), demonstrate that while some tools exhibit working issues, most sophisticated LLM-powered frameworks significantly lower the bar for effective scraping.
+          </p>
+          <p>
+            Such new agent-as-attacker threats motivate us to introduce WebCloak, an effective, lightweight defense that specifically targets the main weakness of LLM crawler agents' fundamental "Parse-then-Interpret" mechanism. Our key idea is dual-layered: (1) Dynamic Structural Obfuscation, which not only randomizes structural cues but also restores visual content client-side using non-traditional methods less amenable to direct LLM exploitation, and (2) Optimized Semantic Labyrinth to mislead the central LLM interpretation of the agent through added harmless-yet-misleading contextual clues, all while not sacrificing perfect visual quality for legitimate users. Our evaluations demonstrate that WebCloak significantly reduces scraping recall rates from 88.7% to 0% against leading LLM-driven scraping agents, offering a robust and practical countermeasure.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<hr />
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">LLMCrawlBench Dataset</h2>
+        <div class="content has-text-justified">
+          <p>
+            To systematically evaluate the LLM-driven web scraping threats, particularly illicit visual asset extraction, we propose  LLMCrawlBench, the first large-scale benchmark designed to evaluate the capability of LLM-driven web agents in adversarial image extraction from real-world webpages.
+          </p>
+        </div>
+        <img id="dataset" src="./static/images/dataset.png" alt="Dataset" />
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<hr />
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Pipeline</h2>
+        <div class="content has-text-justified">
+          <p>
+            LLM-driven scraping agents often reply on webpage parsing and interpretation. To mitigate such evolving threats, we introduce dual-layer WebCloak with (1) dynamic obfuscation and (2) semantic labyrinth, as shown below. WebCloak aims to be a lightweight, “in-page” solution that transforms a standard webpage into a self-protecting asset, without relying on external tools or heavy server-side interventions.
+          </p>
+        </div>
+        <div class="columns is-centered">
+          <!-- Visual Effects. -->
+          <div class="column">
+            <div class="content">
+              <h2 class="title is-5">Dynamic Structural Obfuscation</h2>
+              <img id="s1" src="./static/images/design_s1.png" alt="WebCloak S1" />
+            </div>
+          </div>
+          <div class="column">
+            <h2 class="title is-5">Optimized Semantic Labyrinth</h2>
+            <div class="columns is-centered">
+              <div class="column content">
+                <img id="s2" src="./static/images/design_s2.png" alt="WebCloak S2" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<hr />
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Demonstration</h2>
+        <div class="content has-text-justified">
+          <p>
+            As demonstrated by these videos below, after being protected by WebCloak, LLM-driven web agents can no longer extract any useful assets like images from the webpage, while the experience for real users remains intact.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content has-text-centered">
+          <h2 class="title is-4">Unprotected</h2>
+          <video class="demo-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/bu_orig.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="column has-text-centered">
+        <h2 class="title is-4">WebCloak Protected</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video class="demo-video" controls playsinline height="100%">
+              <source src="./static/videos/bu_full.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>
+            WebCloak is a paper under review. The style of this website is modified upon <a href="https://nerfies.github.io/">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
