@@ -36,6 +36,20 @@
             WebCloak: Characterizing and Mitigating the Threats of LLM-Driven Web Agents as Intelligent
             Scrapers
           </h1>
+          <!-- Badges -->
+          <p align="center" style="padding-top: 0.5rem; padding-bottom: 0.5rem">
+            <a href="https://visitor-badge.laobi.icu/badge?page_id=web-cloak.github.io">
+              <img src="https://visitor-badge.laobi.icu/badge?page_id=web-cloak.github.io" alt="Visitors">
+            </a>
+            &nbsp;
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+              <img src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg" alt="License: CC BY-NC-SA 4.0">
+            </a>
+            &nbsp;
+            <a href="https://github.com/LetterLiGO/web-cloak">
+              <img src="https://img.shields.io/github/stars/web-cloak/webcloak?style=social" alt="GitHub stars">
+            </a>
+          </p>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://letterligo.github.io/">Xinfeng Li</a>,</span>
@@ -134,11 +148,12 @@
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Added Rebuttal Materials</h2>
+        <h2 class="title is-3">Multi-Modal Protection</h2>
         <div class="content has-text-justified">
           <p>
-            These added videos illustrate that WebCloak can simultaneously provide protection to image
-            assets, text content, and audio assets on a single page.
+            WebCloak provides comprehensive protection against malicious scraping of various content types.
+            Beyond visual assets, WebCloak also effectively protects text content and audio assets from
+            being extracted by LLM-driven web agents, as demonstrated in the videos below.
           </p>
         </div>
       </div>
@@ -250,10 +265,27 @@
         <h2 class="title is-3">LLMCrawlBench Dataset</h2>
         <div class="content has-text-justified">
           <p>
-            To systematically evaluate the LLM-driven web scraping threats, particularly illicit visual
-            asset extraction, we propose LLMCrawlBench, the first large-scale benchmark designed to evaluate
-            the capability of LLM-driven web agents in adversarial image extraction from real-world
-            webpages.
+            <strong>LLMCrawlBench</strong> is a comprehensive benchmark dataset featuring <strong>237 real-world webpages</strong> with
+            <strong>10,895 high-quality images</strong> extracted from <strong>50 popular high-traffic websites</strong> across
+            <strong>5 critical categories</strong> (Marketplaces, Social Media, News, Education, and Entertainment).
+          </p>
+          <p>
+            Originally designed to systematically evaluate LLM-driven web scraping threats and illicit visual asset extraction,
+            LLMCrawlBench has the potential to support multiple research domains:
+          </p>
+          <ul style="text-align: left; display: inline-block;">
+            <li><strong>Web Agent Security & Robustness Testing:</strong> Benchmark LLM-driven agents' behavior on protected vs. unprotected content</li>
+            <li><strong>Web IP Protection Research:</strong> Develop and evaluate novel defense mechanisms against automated scraping</li>
+            <li><strong>LLM Behavior Analysis:</strong> Study how large language models interpret and interact with complex web structures</li>
+            <li><strong>Crawler Detection & Defense:</strong> Train and test anti-bot systems using realistic adversarial scenarios</li>
+            <li><strong>Web Structure Analysis:</strong> Analyze diverse HTML patterns and DOM structures from real production websites</li>
+            <li><strong>Visual Content Extraction Evaluation:</strong> Assess computer vision and multimodal models on real-world webpage layouts</li>
+            <li><strong>Adversarial ML Research:</strong> Create obfuscation techniques and study model robustness against perturbations</li>
+            <li><strong>Accessibility & Web Standards:</strong> Evaluate how automated tools handle diverse web technologies and standards</li>
+          </ul>
+          <p>
+            Each webpage in the dataset is carefully annotated with ground-truth image locations, categories, and metadata.
+            We are also expanding the dataset with additional large-scale text and audio content, which will be released soon.
           </p>
         </div>
         <img id="dataset" src="./static/images/dataset.png" alt="Dataset"/>
@@ -354,7 +386,7 @@
       <div class="column is-8">
         <div class="content has-text-centered">
           <p>
-            WebCloak is a paper under review. The style of this website is modified upon <a
+            WebCloak is accepted at IEEE S&P 2026. The style of this website is modified upon <a
               href="https://nerfies.github.io/">Nerfies</a>.
           </p>
         </div>
